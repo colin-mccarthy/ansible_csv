@@ -1,1 +1,9 @@
----
+object-group network SourceGroup
+network-object object 1.1.1.1
+network-object object 1.1.1.2
+object-group network destinationgroup
+network-object host 2.2.2.1
+network-object host 2.2.2.2
+
+access-list Outside-IN remark CHG12345 
+access-list Outside-IN  extended permit ip object-group SourceGroup object-group destinationgroup log 6 interval 300 

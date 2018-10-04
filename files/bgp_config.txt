@@ -1,1 +1,19 @@
----
+interface Loopback0
+ ip address 1.1.1.3 255.255.255.255
+ no shut
+
+interface GigabitEthernet0/3
+ no switchport
+ ip address 10.1.1.2 255.255.255.252
+!
+router bgp 300
+  bgp router-id 1.1.1.3
+  neighbor 1.1.1.1 remote-as 100
+  neighbor 1.1.1.1 update-source Loopback0
+  neighbor 1.1.1.1 ebgp-multihop 3
+  neighbor 1.1.1.1 activate
+  no neighbor 1.1.1.1 shut
+  redistribute connected
+!
+
+ip route 1.1.1.1 255.255.255.255 10.1.1.1

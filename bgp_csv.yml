@@ -3,6 +3,9 @@
 - hosts: ios
   gather_facts: false
   connection: network_cli
+
+  vars:
+    bgp_neighbor_ip: 1.1.1.1
   
   tasks:
   - name: Define Values From CSV File
@@ -18,8 +21,8 @@
   
   - name: jinja template
     template:
-      src: bgp_neighbors.j2
-      dest: bgp_config.txt
+      src: templates/bgp_neighbors.j2
+      dest: files/bgp_config.txt
     delegate_to: localhost
   
   #- name: Copy base config to Cisco router / switch
