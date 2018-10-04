@@ -10,19 +10,19 @@
   tasks:
   - name: Define Values From CSV File
     set_fact:
-      loop_ip: "{{ lookup('csvfile', bgp_neighbor_ip +' file=files/bgp_neighbors.csv delimiter=, col=1') }}"
-      int_ip: "{{ lookup('csvfile', bgp_neighbor_ip +' file=files/bgp_neighbors.csv delimiter=, col=2') }}"
-      int_mask: "{{ lookup('csvfile', bgp_neighbor_ip +' file=files/bgp_neighbors.csv delimiter=, col=3') }}"
-      int_name: "{{ lookup('csvfile', bgp_neighbor_ip +' file=files/bgp_neighbors.csv delimiter=, col=4') }}"
-      local_as: "{{ lookup('csvfile', bgp_neighbor_ip +' file=files/bgp_neighbors.csv delimiter=, col=5') }}"
-      neighbor_as: "{{ lookup('csvfile', bgp_neighbor_ip +' file=files/bgp_neighbors.csv delimiter=, col=6') }}"
-      neigh_int_ip: "{{ lookup('csvfile', bgp_neighbor_ip +' file=files/bgp_neighbors.csv delimiter=, col=7') }}"
+      loop_ip: "{{ lookup('csvfile', bgp_neighbor_ip +' file=csv_files/bgp_neighbors.csv delimiter=, col=1') }}"
+      int_ip: "{{ lookup('csvfile', bgp_neighbor_ip +' file=csv_files/bgp_neighbors.csv delimiter=, col=2') }}"
+      int_mask: "{{ lookup('csvfile', bgp_neighbor_ip +' file=csv_files/bgp_neighbors.csv delimiter=, col=3') }}"
+      int_name: "{{ lookup('csvfile', bgp_neighbor_ip +' file=csv_files/bgp_neighbors.csv delimiter=, col=4') }}"
+      local_as: "{{ lookup('csvfile', bgp_neighbor_ip +' file=csv_files/bgp_neighbors.csv delimiter=, col=5') }}"
+      neighbor_as: "{{ lookup('csvfile', bgp_neighbor_ip +' file=csv_files/bgp_neighbors.csv delimiter=, col=6') }}"
+      neigh_int_ip: "{{ lookup('csvfile', bgp_neighbor_ip +' file=csv_files/bgp_neighbors.csv delimiter=, col=7') }}"
     delegate_to: localhost
   
   - name: jinja template
     template:
       src: templates/bgp_neighbors.j2
-      dest: files/bgp_config.txt
+      dest: configs/bgp_config.txt
     delegate_to: localhost
   
   #- name: Copy base config to Cisco router / switch
