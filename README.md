@@ -39,3 +39,9 @@ network-object host {{ dst_2 }}
 access-list Outside-IN remark {{ change_number }}
 access-list Outside-IN  extended permit ip object-group {{ source_group }} object-group {{ destination_group }} log 6 interval 300
 ```
+
+
+```
+bgp_neighbor,loop_ip,int_ip,int_mask,int_name,local_as,neigh_as,neigh_int_ip
+1.1.1.1,1.1.1.3,10.1.1.2,255.255.255.252,GigabitEthernet0/3,300,100,10.1.1.1
+1.1.1.4,1.1.1.3,10.1.2.1,255.255.255.252,GigabitEthernet0/2,300,400,10.1.2.2```
