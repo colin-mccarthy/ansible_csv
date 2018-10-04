@@ -10,19 +10,19 @@
   tasks:
   - name: Define Values From CSV File
     set_fact:
-      source_group: "{{ lookup('csvfile', asa_rule +' file=files/asa_rules.csv delimiter=, col=1') }}"
-      src_1: "{{ lookup('csvfile', asa_rule +' file=files/asa_rules.csv delimiter=, col=2') }}"
-      src_2: "{{ lookup('csvfile', asa_rule +' file=files/asa_rules.csv delimiter=, col=3') }}"
-      destination_group: "{{ lookup('csvfile', asa_rule +' file=files/asa_rules.csv delimiter=, col=4') }}"
-      dst_1: "{{ lookup('csvfile', asa_rule +' file=files/asa_rules.csv delimiter=, col=5') }}"
-      dst_2: "{{ lookup('csvfile', asa_rule +' file=files/asa_rules.csv delimiter=, col=6') }}"
-      change_number: "{{ lookup('csvfile', asa_rule +' file=files/asa_rules.csv delimiter=, col=7') }}"
+      source_group: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=1') }}"
+      src_1: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=2') }}"
+      src_2: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=3') }}"
+      destination_group: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=4') }}"
+      dst_1: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=5') }}"
+      dst_2: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=6') }}"
+      change_number: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=7') }}"
     delegate_to: localhost
 
   - name: jinja template
     template:
       src: templates/asa_rules.j2
-      dest: files/asa_config.txt
+      dest: configs/asa_config.txt
     delegate_to: localhost
 
 #- name: Copy base config to Cisco router / switch
