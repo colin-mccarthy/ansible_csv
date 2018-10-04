@@ -19,7 +19,7 @@
   - name: jinja template
     template:
       src: bgp_neighbors.j2
-      dest: final_config.txt
+      dest: bgp_config.txt
     delegate_to: localhost
   
   #- name: Copy base config to Cisco router / switch
