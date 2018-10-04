@@ -23,4 +23,4 @@ router bgp {{ local_as }}
 !
 
 ip route {{ bgp_neighbor_ip }} 255.255.255.255 {{ neigh_int_ip }}
-~```
+```
