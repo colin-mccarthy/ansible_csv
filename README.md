@@ -3,6 +3,8 @@
 
 Create configs from CSV files
 
+
+BGP neighbors
 ```
 interface Loopback0
  ip address {{ loop_ip }} 255.255.255.255
@@ -23,4 +25,17 @@ router bgp {{ local_as }}
 !
 
 ip route {{ bgp_neighbor_ip }} 255.255.255.255 {{ neigh_int_ip }}
+```
+
+ASA Firewall rules
+```
+object-group network {{ source_group }}
+network-object object {{ src_1 }}
+network-object object {{ src_2 }}
+object-group network {{ destination_group }}
+network-object host {{ dst_1 }}
+network-object host {{ dst_2 }}
+
+access-list Outside-IN remark {{ change_number }}
+access-list Outside-IN  extended permit ip object-group {{ source_group }} object-group {{ destination_group }} log 6 interval 300
 ```
