@@ -25,6 +25,6 @@
       dest: configs/asa_config.txt
     delegate_to: localhost
 
-#- name: Copy base config to Cisco router / switch
-#  ios_config:
+#- name: Push config to Cisco ASA
+#  asa_config:
 #    src: asa_rules.j2 
