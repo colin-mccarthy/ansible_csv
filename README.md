@@ -4,7 +4,7 @@
 Create configs from CSV files
 
 
-BGP neighbors
+BGP neighbors template
 ```
 interface Loopback0
  ip address {{ loop_ip }} 255.255.255.255
@@ -27,7 +27,7 @@ router bgp {{ local_as }}
 ip route {{ bgp_neighbor_ip }} 255.255.255.255 {{ neigh_int_ip }}
 ```
 
-ASA Firewall rules
+ASA Firewall rules template
 ```
 object-group network {{ source_group }}
 network-object object {{ src_1 }}
