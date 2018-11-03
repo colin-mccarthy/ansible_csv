@@ -25,6 +25,6 @@
       dest: configs/bgp_config.txt
     delegate_to: localhost
   
-  #- name: Copy base config to Cisco router / switch
+  #- name: Push config to Cisco router
   # ios_config:
    #  src: bgp_neighbors.j2
