@@ -3,10 +3,10 @@
 - hosts: asa
   gather_facts: false
   connection: network_cli
-  
+
   vars:
     asa_rule: a
-  
+
   tasks:
   - name: Define Values From CSV File
     set_fact:
@@ -25,6 +25,9 @@
       dest: configs/asa_config.txt
     delegate_to: localhost
 
+
+# replace template module with ios_config when ready to write to devie
+
 #- name: Copy base config to Cisco router / switch
 #  ios_config:
-#    src: asa_rules.j2 
+#    src: asa_rules.j2
