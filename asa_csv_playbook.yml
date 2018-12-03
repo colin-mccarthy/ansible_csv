@@ -30,4 +30,4 @@
 
 - name: Push config to Cisco ASA
   asa_config:
-  src: asa_rules.j2
+    src: asa_rules.j2
