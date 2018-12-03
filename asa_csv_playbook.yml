@@ -19,15 +19,15 @@
       change_number: "{{ lookup('csvfile', asa_rule +' file=csv_files/asa_rules.csv delimiter=, col=7') }}"
     delegate_to: localhost
 
-  - name: jinja template
-    template:
-      src: templates/asa_rules.j2
-      dest: configs/asa_config.txt
-    delegate_to: localhost
+#  - name: jinja template
+#    template:
+#      src: templates/asa_rules.j2
+#      dest: configs/asa_config.txt
+#    delegate_to: localhost
 
 
 # replace template module with ios_config when ready to write to devie
 
-#- name: Push config to Cisco ASA
-#  asa_config:
-#    src: asa_rules.j2
+- name: Push config to Cisco ASA
+  asa_config:
+  src: asa_rules.j2
