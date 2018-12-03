@@ -28,6 +28,6 @@
 
 # replace template module with ios_config when ready to write to devie
 
-- name: Push config to Cisco ASA
-  asa_config:
-    src: asa_rules.j2
+  - name: Push config to Cisco ASA
+    asa_config:
+      src: asa_rules.j2
