@@ -40,7 +40,7 @@ access-list Outside-IN remark {{ change_number }}
 access-list Outside-IN  extended permit ip object-group {{ source_group }} object-group {{ destination_group }} log 6 interval 300
 ```
 
-|Aligned left|Centered|Aligned Right|No alignment|
+|asa_rule|source_group|src_1|src_2|destination_group|dst_1|dst_2|change_number|
 |:-----------|:------:|------------:|------------|
 |to the left|in the middle|to the right|wherever|
 
