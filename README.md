@@ -41,7 +41,7 @@ access-list Outside-IN  extended permit ip object-group {{ source_group }} objec
 ```
 
 |asa_rule|source_group|src_1|src_2|destination_group|dst_1|dst_2|change_number|
-|:-----------|:------:|------------:|------------|
+|:-------|:------:|:------------:|------------:|
 |to the left|in the middle|to the right|wherever|
 
 
