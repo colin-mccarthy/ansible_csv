@@ -1,4 +1,4 @@
-# ansible_csv 🥤
+# 🥤 ansible_csv ⚡️
 
 
 Create configs from CSV files
