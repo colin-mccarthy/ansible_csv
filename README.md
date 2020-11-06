@@ -1,4 +1,7 @@
-# 🥤 ansible_csv ⚡️
+#  ansible_csv 
+
+<code><img height="22" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/ansible.svg"></code>
+<code><img height="22" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/cisco.svg"></code>
 
 
 Create configs from CSV files
