@@ -24,6 +24,7 @@
 #    template:
 #      src: templates/asa_rules.j2
 #      dest: configs/asa_config.txt
+#      mode: '0644'    
 #    delegate_to: localhost
 
 
